@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+* {
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+}
+body {
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+}
+.container-index {
+    margin-top: 20px;
+    padding-bottom: 200px;
+}
+.navbar {
+    height: 10vh;
+}
+.navbar-color,
+.navbar-color:hover {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.header-links a {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card-header h3 {
+    margin-top: 15px;
+}
+.maincard {
+    margin-top: 2vh;
+}
+.form label {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.form-input,
+.form-text {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #111;
+    resize: none;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+}
+.form-control:focus {
+    border-color: #dddddd;
+    outline: none;
+    box-shadow: none;
+}
+.card-response {
+    margin-top: 15px;
+}
+.card-content h3,
+.card-content p {
+    margin-top: 15px;
+}
+.card-question {
+    margin-top: 20px;
+}
+.btn {
+    box-shadow: none;
+    outline: none;
+}
+.btn-question {
+    margin-top: 10px;
+    color: white;
+    box-shadow: none;
+    outline: none;
+}
+.btn-response {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    box-shadow: none;
+    outline: none;
+}
+.content-recent {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+}
