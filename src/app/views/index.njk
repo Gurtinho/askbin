@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ('partials/header.ejs'); %> 
+    {% include 'partials/header.njk' %}
 </head>
 <body>
-    <%- include ('partials/navbar.ejs'); %>
+    {% include 'partials/navbar.njk' %}
     <section class="container container-index">
         <div class="card card-question">
             <div class="card-body card-content">
                 <h3>Precisa de ajuda?</h3>
             </div>
             <div class="card-footer">
-                <a href="/question"><button class="btn btn-success bg-gradient btn-response">Perguntar</button></a>
+                <a href="/question"><button class="btn btn-form bg-gradient btn-response">Perguntar</button></a>
             </div>
         </div>
 
@@ -21,20 +21,22 @@
             </div>
         </div>
 
-        <% quest.forEach(quest => { %>
+        {% for quest in question %}
             <div class="card card-question">
                 <div class="card-body card-content">
-                    <h3><%= quest.title %></h3>
+                    <h3>{{ quest.title }}</h3>
+                    <p class="card-p" value="{{ quest.created_at }}"></p>
                 </div>
                 <div class="card-body">
-                    <p><%= quest.question %></p>
+                    <p>{{ quest.question }}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="/questions/<%= quest.id %>"><button class="btn btn-success bg-gradient btn-response">Ver respostas</button></a>
+                    <a href="/questions/{{ quest.id }}"><button class="btn btn-form bg-gradient btn-response">Ver respostas</button></a>
                 </div>
             </div>
-        <% }) %>
+        {% endfor %}
     </section>
 </body>
-    <%- include ('partials/footer.ejs'); %> 
+    {% include 'partials/footer.njk' %}
+    <script src="/js/dateformat.js"></script>
 </html>

@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ('partials/header.ejs'); %> 
+    {% include 'partials/header.njk' %}
 </head>
 <body>
-    <%- include ('partials/navbar.ejs'); %> 
-    <section class="container">
+    {% include 'partials/navbar.njk' %}
+    <section class="container container-index">
         <div class="card maincard">
             <div class="card-header card-content">
-                <h3><%= quest.title %></h3>
+                <h3>{{ quest.title }}</h3>
+                <p class="card-p">{{ quest.createdAt }}</p>
             </div>
             <div class="card-body card-content">
-                <p><%= quest.question %></p>
+                <p>{{ quest.question }}</p>
             </div>
             <form method="POST" action="/saveanswer" class="form">
                 <div class="card-body card-content">
+                    <h4>Responda: </h4>
                     <textarea  name="answer" cols="30" rows="10" class="form-control form-text" placeholder="Digite sua resposta aqui..." required></textarea>
                 </div>
                 <div class="card-footer">
-                    <input type="hidden" name="id" value="<%= quest.id %>">
-                    <a href="/answer"><button class="btn btn-success bg-gradient btn-response">Responder</button></a>
+                    <input type="hidden" name="id" value="{{ quest.id }}">
+                    <a href="/answer">
+                        <button class="btn btn-form bg-gradient btn-response">Responder</button>
+                    </a>
                 </div>
             </form>
         </div>
     </section>
 </body>
-    <%- include ('partials/footer.ejs'); %> 
+    {% include 'partials/footer.njk' %}
+    <script src="/js/resize.js"></script>
 </html>

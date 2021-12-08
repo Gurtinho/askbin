@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'partials/header.njk' %}
+</head>
+<body>
+    {% include 'partials/navbar.njk' %}
+    <section class="container">
+        <div class="card maincard">
+            <div class="card-header card-content">
+                <h3>{{ quest.title }}</h3>
+                <p class="card-p"><{{ quest.createdAt }}</p>
+            </div>
+            <div class="card-body card-content">
+                <p>{{ quest.question }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="/answer/{{ quest.id }}"><button class="btn btn-form bg-gradient btn-response">Responder</button></a>
+            </div>
+        </div>
+
+        <!-- respostas -->
+        <div class="container">
+            <div class="content-recent">
+                <h4>Respostas recentes</h4>
+            </div>
+        </div>
+
+        <div class="container-index">
+            {% for answer in answers %}
+                <div class="card card-content card-response">
+                    <div class="card-body card-content">
+                        <p>{{ answer.answer }}</p>
+                        <p class="card-p">{{ answer.createdAt }}</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="card card-content card-response">
+                    <div class="card-body card-content">
+                        <p>Sem respostas</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+    {% include 'partials/footer.njk' %}
+</html>
