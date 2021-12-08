@@ -3,9 +3,8 @@ const nunjucks = require('nunjucks')
 const app = express()
 const routes = require('./routes')
 
-app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+app.use(express.static('public'))
 app.use(routes)
 
 app.set('view engine', 'njk')

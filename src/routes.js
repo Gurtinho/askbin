@@ -8,17 +8,19 @@ const search = require('./app/controllers/search')
 // questions
 routes.get('/', question.index)
 routes.get('/question', question.question)
-routes.post('/savequest', question.savequest)
-routes.get('/questions/:id', question.questionId)
+routes.post('/question', question.savequestion)
+routes.get('/questions/:id', question.showQuestion)
 
 // answers
 routes.get('/answer/:id', answer.answerId)
-routes.post('/saveanswer', answer.saveanswer)
+routes.post('/answer', answer.saveanswer)
 
 // search questions
 
 
 // error
-routes.use((req, res) => { return res.status(404).render('error') })
+routes.use((req, res) => {
+    return res.status(404).render('error')
+})
 
 module.exports = routes
