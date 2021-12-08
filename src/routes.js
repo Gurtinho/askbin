@@ -8,12 +8,12 @@ const search = require('./app/controllers/search')
 // questions
 routes.get('/', question.index)
 routes.get('/question', question.question)
-routes.post('/question', question.savequestion)
+routes.post('/question', question.saveQuestion)
 routes.get('/questions/:id', question.showQuestion)
 
 // answers
-routes.get('/answer/:id', answer.answerId)
-routes.post('/answer', answer.saveanswer)
+routes.get('/answer/:id', answer.questAnswer)
+routes.post('/answer', answer.saveAnswer)
 
 // search questions
 

@@ -8,10 +8,10 @@ CREATE TABLE "questions" (
 
 CREATE TABLE "answers" (
   "id" SERIAL PRIMARY KEY,
-  "answer_id" int NOT NULL,
+  "question_id" int NOT NULL,
   "answer" text NOT NULL,
   "created_at" timestamp DEFAULT (now()),
   "updated_at" timestamp DEFAULT (now())
 );
 
-ALTER TABLE "answers" ADD FOREIGN KEY ("answer_id") REFERENCES "questions" ("id");
+ALTER TABLE "answers" ADD FOREIGN KEY ("question_id") REFERENCES "questions" ("id");

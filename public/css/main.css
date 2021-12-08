@@ -27,16 +27,23 @@ body {
     align-items: center;
 }
 .header-links a {
+    font-weight: bold;
     margin-left: 20px;
     margin-right: 20px;
 }
+.header-links input,
+.header-links button {
+    font-weight: bold;
+}
 .card-header h3 {
+    font-weight: bold;
     margin-top: 15px;
 }
 .maincard {
     margin-top: 2vh;
 }
 .form label {
+    font-weight: bold;
     margin-top: 10px;
     font-size: 18px;
 }
@@ -61,6 +68,9 @@ body {
 .card-response {
     margin-top: 15px;
 }
+.card-content h3 {
+    font-weight: bold;
+}
 .card-content h3,
 .card-content p {
     margin-top: 15px;
@@ -71,6 +81,16 @@ body {
 }
 .card-question {
     margin-top: 20px;
+}
+.card-footer {
+    display: flex;
+    align-items: center;
+}
+.card-footer p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: rgb(112, 112, 112);
 }
 .btn {
     box-shadow: none;

@@ -1,17 +1,27 @@
+const Question = require('../models/questionModel')
+const Answer = require('../models/answerModel')
 
 module.exports = {
-    answerId(req, res) {
+    async questAnswer(req, res) {
         const id = req.params.id
+
+        const showQuest = await Question.showQuestion(id)
+        const quest = showQuest.rows[0]
+
+        return res.render('answer', { quest })
     },
 
-    saveanswer(req, res) {
+    async saveAnswer(req, res) {
         const keys = Object.keys(req.body)
-        const id = req.body.id
 
         for ( let key of keys ) {
             if (req.body[key] == '') {
                 return res.redirect('/')
             }
         }
+
+        await Answer.saveAnswer(req.body)
+
+        return res.redirect(`/questions/${req.body.id}`)
     }
 }

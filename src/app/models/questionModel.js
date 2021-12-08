@@ -2,8 +2,12 @@ const postgre = require('../../config/postgre')
 
 module.exports = {
     index() {
+        const total = `(SELECT count(*) FROM answers WHERE answers.question_id = questions.id) AS total`
+
         const query = `
-            SELECT * FROM questions
+            SELECT *,
+            ${total}
+            FROM questions
             ORDER BY created_at DESC
         `
         return postgre.query(query)

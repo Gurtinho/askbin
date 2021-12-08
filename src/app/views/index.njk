@@ -31,7 +31,16 @@
                     <p>{{ quest.question }}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="/questions/{{ quest.id }}"><button class="btn btn-form bg-gradient btn-response">Ver respostas</button></a>
+                    <a href="/questions/{{ quest.id }}">
+                        <button class="btn btn-form bg-gradient btn-response">Ver respostas</button>
+                    </a>
+                {% if quest.total != undefined %}
+                    <p>
+                        {{ quest.total }} {% if quest.total > 1 %} respostas {% else %} resposta {% endif %}
+                    </p>
+                {% else %}
+                    <p>Nenhuma resposta</p>
+                {% endif %}
                 </div>
             </div>
         {% endfor %}
